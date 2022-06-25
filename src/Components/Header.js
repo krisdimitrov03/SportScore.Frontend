@@ -1,8 +1,11 @@
 import React from 'react'
+import Navigation from './Navigation.js'
 
 function Header() {
   return (
-    <div>Header</div>
+    <div>
+      <Navigation />
+    </div>
   )
 }
 
