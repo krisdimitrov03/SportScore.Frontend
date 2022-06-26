@@ -1,26 +1,30 @@
 import React from 'react'
-import { BiLogIn } from 'react-icons/bi'
+import { BiLogIn, BiLogOut } from 'react-icons/bi'
+import { BsFillBellFill } from 'react-icons/bs'
+import profilePicture from '../img/example-profile-picture.jpg';
 
-function Navigation(user) {
-  if (user.id) {
-    return (
+function Navigation({ user }) {
+  return (
+    <>
+    {
+      user.id === undefined
+      ?
       <>
         <a href=""><BiLogIn />Log in</a>
-        <a href="">Sign up</a>
+        <a href="" className='sign-up'>Sign up</a>
       </>
-    )
-  } else {
-    return (
+      : 
       <>
+        <a href=""><BsFillBellFill />Favourites</a>
         <a href="" className="profile">
-          <img src={client.profilePicture} alt="Profile Picture" />
-          <span>{client.username}</span>
+          <img src={profilePicture} alt="Profile Picture" />
+          <span>Profile</span>
         </a>
-        <a href="">Watch</a>
-        <a href="">Log out</a>
+        <a href=""><BiLogOut />Log out</a>
       </>
-    )
-  }
+      }
+      </>
+  )
 }
 
 export default Navigation

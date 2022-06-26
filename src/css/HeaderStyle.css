@@ -1,0 +1,104 @@
+.Header {
+    color: white;
+}
+
+nav {
+    background-color: #162C7A;
+    display: flex;
+    padding: 1rem 3rem;
+}
+
+.left,
+.right {
+    width: 100%;
+}
+
+.left img,
+.left span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.left img {
+    height: 3rem;
+    margin-right: 1rem;
+}
+
+.left span {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 200%;
+}
+
+.right {
+    text-align: right;
+}
+
+.right a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    margin: 0 0.5rem;
+}
+
+.right .sign-up {
+    background-color: white;
+    color: #162C7A;
+}
+
+.profile {
+    background-color: white;
+    color: #162C7A!important;
+    padding: 0.2rem 0.8rem 0.2rem 0.2rem!important;
+    border-radius: 50rem !important;
+}
+
+.right .profile img {
+    height: 2rem;
+    width: 2rem;
+    object-fit: cover;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.right a svg,
+.right a img {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+.sport-tabs {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.sport-tabs a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #0F1A41;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.sport-tabs a svg {
+    font-size: 2rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+
+.left-sport-tab {
+    border-radius: 1rem 0 0 1rem;
+}
+
+.right-sport-tab {
+    border-radius: 0 1rem 1rem 0;
+}
+
+.active {
+    color: #162C7A!important;
+    background-color: white!important;
+}
