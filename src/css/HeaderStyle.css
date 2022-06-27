@@ -8,6 +8,11 @@ nav {
     padding: 1rem 3rem;
 }
 
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
 .left,
 .right {
     width: 100%;
@@ -36,8 +41,6 @@ nav {
 
 .right a {
     display: inline-block;
-    text-decoration: none;
-    color: white;
     padding: 0.8rem 1rem;
     border-radius: 0.5rem;
     font-weight: 600;

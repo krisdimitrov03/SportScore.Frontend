@@ -1,0 +1,54 @@
+.main {
+    text-align: center;
+}
+
+.leagues {
+    text-align: left;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.header-of-leagues {
+    color: white;
+    background-color: #162C7A;
+    padding: 1.5rem 13rem 1.5rem 1.5rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    font-weight: 600;
+}
+
+.body-of-leagues .country {
+    color: black;
+    background-color: white;
+    padding: 0.8rem;
+    cursor: pointer;
+}
+
+.body-of-leagues .country:hover {
+    background-color: #C8C8C8;
+}
+
+.body-of-leagues .country img {
+    height: 1.5rem;
+    width: 2.5rem;
+    object-fit: cover;
+}
+
+.body-of-leagues .country img,
+.body-of-leagues .country span {
+    vertical-align: middle;
+    margin: 0 0.5rem;
+}
+
+.body-of-leagues .spread {
+    background-color: #C8C8C8;
+}
+
+.body-of-leagues .league {
+    background-color: #F1F1F1;
+    padding: 0.8rem;
+    cursor: pointer;
+}
+
+.body-of-leagues .league:hover {
+    background-color: #d8d8d8;
+}

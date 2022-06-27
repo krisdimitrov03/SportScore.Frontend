@@ -1,26 +1,36 @@
 import React from 'react'
 import { BiLogIn, BiLogOut } from 'react-icons/bi'
 import { BsFillBellFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 import profilePicture from '../img/example-profile-picture.jpg';
+import { useContext } from 'react'
+import { UserContext } from '../UserContext'
+import authService from '../Services/authService'
 
-function Navigation({ user }) {
+function Navigation() {
+  const { user, setUser } = useContext(UserContext);
+
+  function OnLogout() {
+    authService.logUserOut(setUser);
+  }
+  
   return (
     <>
     {
-      user.id === undefined
+      user === null
       ?
       <>
-        <a href=""><BiLogIn />Log in</a>
-        <a href="" className='sign-up'>Sign up</a>
+        <Link to="/login"><BiLogIn />Log in</Link>
+        <Link to="/register" className='sign-up'>Sign up</Link>
       </>
       : 
       <>
-        <a href=""><BsFillBellFill />Favourites</a>
-        <a href="" className="profile">
+        <Link to="/favourites"><BsFillBellFill />Favourites</Link>
+        <Link to={`/profile/${user.id}`} className="profile">
           <img src={profilePicture} alt="Profile Picture" />
           <span>Profile</span>
-        </a>
-        <a href=""><BiLogOut />Log out</a>
+        </Link>
+        <Link onClick={OnLogout} to="/logout"><BiLogOut />Log out</Link>
       </>
       }
       </>
