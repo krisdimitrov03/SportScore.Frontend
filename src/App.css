@@ -12,3 +12,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+
+.hidden {
+  display: none;
+}
