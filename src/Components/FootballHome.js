@@ -4,7 +4,7 @@ function FootballHome({ leagues, fixtures }) {
   return (
     <div className="main">
       <div className="leagues">
-        <div className="header-of-leagues">
+        <div className="header-of-content">
           LEAGUES
         </div>
         <div className="body-of-leagues">
@@ -65,7 +65,9 @@ function FootballHome({ leagues, fixtures }) {
         </div>
       </div>
       <div className="matches">
-        div
+        <div className="header-of-content">
+          <span>MATCHES</span>
+        </div>
       </div>
     </div>
   )
