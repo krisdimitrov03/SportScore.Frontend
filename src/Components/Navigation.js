@@ -2,7 +2,6 @@ import React from 'react'
 import { BiLogIn, BiLogOut } from 'react-icons/bi'
 import { BsFillBellFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
-import profilePicture from '../img/example-profile-picture.jpg';
 import { useContext } from 'react'
 import { UserContext } from '../UserContext'
 import authService from '../Services/authService'
@@ -27,7 +26,7 @@ function Navigation() {
       <>
         <Link to="/favourites"><BsFillBellFill />Favourites</Link>
         <Link to={`/profile/${user.id}`} className="profile">
-          <img src={profilePicture} alt="Profile Picture" />
+          <img src={user.profileImage} alt="Profile Picture" />
           <span>Profile</span>
         </Link>
         <Link onClick={OnLogout} to="/logout"><BiLogOut />Log out</Link>

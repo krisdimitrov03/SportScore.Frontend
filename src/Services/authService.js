@@ -1,11 +1,13 @@
 import { setCookie, getCookie, removeCookie } from '../Services/cookieService';
+import { getFavoritesByUser } from '../Services/favService'
 
 const logUserIn = async (email, password, setUser) => {
     const userFromServer = await fetchUser(email, password);
+    const favorites = await getFavoritesByUser(userFromServer.id)
 
       if (userFromServer !== null) {
-        setCookie("SportScoreUSR", userFromServer.id, 3);
-        setUser(userFromServer);
+        setCookie("SportScoreUSR", userFromServer.accessToken, 3);
+        setUser({ ...userFromServer, favorites });
       } else {
         setUser({});
       }

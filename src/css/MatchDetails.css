@@ -1,0 +1,215 @@
+.main {
+    padding-top: 2rem;
+}
+
+.match-details {
+    background-color: #F1F1F1;
+    display: inline-block;
+    border-radius: 1rem;
+}
+
+.header-match-details {
+    margin: 0;
+    padding: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.header-match-details a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-match-details a:hover {
+    text-decoration: underline;
+}
+
+.match-preview div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.match-preview .team {
+    padding: 1rem 3.5rem;
+}
+
+.match-preview .team img {
+    height: 9rem;
+    width: 9rem;
+    object-fit: contain;
+}
+
+.match-preview .team p {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    color: #162C7A;
+    font-weight: 600;
+}
+
+.match-preview .state .result {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.match-preview .state p:nth-child(2) {
+    color: green;
+    font-weight: 500;
+}
+
+.dsl {
+    display: flex;
+}
+
+.dsl-tab {
+    width: 100%;
+    font-weight: 600;
+    padding: 0 0 1rem 0;
+    color: #6A6A6A;
+    cursor: pointer;
+}
+
+.dsl-active {
+    color: #162C7A;
+    border-bottom: 5px solid #162C7A;
+}
+
+.dsl-body {
+    padding: 0 1rem;
+    background-color: white;
+}
+
+.date-and-time {
+    padding: 0.8rem 0;
+    font-weight: 500;
+}
+
+.mini-event {
+    padding: 0.8rem;
+    border-top: 1px solid #DDDDDD;
+}
+
+.mini-event svg,
+.mini-event span {
+    vertical-align: middle;
+    margin: 0 0.3rem;
+}
+.mini-event svg {
+    font-size: 130%;
+}
+
+.dsl-time,
+.scorer {
+    color: #828282;
+}
+
+.dsl-res {
+    font-weight: 600;
+}
+
+.home {
+    text-align: left;
+}
+
+.away {
+    text-align: right;
+}
+
+.dsl-footer {
+    height: 0.5rem;
+    border-top: 1px solid #DDDDDD;
+    background-color: #DDDDDD;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.stat {
+    padding: 1rem;
+}
+
+.stat p {
+    margin: 0;
+    padding: 0;
+}
+
+.stat-text {
+    display: flex;
+    align-items: center;
+}
+
+.stat-text p {
+    width: 100%;
+    text-align: left;
+
+}
+
+.stat-text p:nth-child(2) {
+    text-align: right;
+}
+
+.stat-line {
+    display: flex;
+    align-items: center;
+}
+
+.stat-line div {
+    height: 1rem;
+}
+
+.home-part {
+    background-color: #162C7A;
+    width: 62%;
+}
+
+.away-part {
+    background-color: rgb(33, 194, 33);
+    width: 38%;
+}
+
+.pitch {
+    background-image: url(../img/football-pitch.jpg);
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.player {
+    display: inline-block;
+    margin: 1rem 2rem;
+    font-weight: 600;
+}
+
+.player p:nth-child(1) {
+    padding: 1rem;
+    background-image: url(../img/t-shirt.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.player p {
+    margin: 0;
+}
+
+.lineup-headers {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lp-header {
+    width: 100%;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    font-weight: 600;
+    background-color: #DDDDDD;
+    color: #162C7A;
+}
+
+.lp-header:hover {
+    text-decoration: underline;
+}
+
+.active-lp {
+    color: white;
+    background-color: #162C7A;
+}

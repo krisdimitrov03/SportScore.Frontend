@@ -5,6 +5,7 @@
 /* CSS Files */
 @import url(./css/HeaderStyle.css);
 @import url(./css/FootballMainStyle.css);
+@import url(./css/MatchDetails.css);
 
 body {
   font-family: 'Inter', sans-serif;
