@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* CSS Files */
+@import url(./css/Loader.css);
 @import url(./css/HeaderStyle.css);
 @import url(./css/FootballMainStyle.css);
 @import url(./css/MatchDetails.css);

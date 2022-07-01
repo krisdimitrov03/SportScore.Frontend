@@ -3,6 +3,7 @@ import { BsBell, BsBellFill, BsThreeDots } from 'react-icons/bs'
 import { CgMediaLive } from 'react-icons/cg'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../UserContext'
+import { createGuid } from '../GuidGenerator'
 
 function FootballHome({ leagues, fixtures, state, onShowOrHide, onStateChange }) {
   const { user, setUser } = useContext(UserContext);
@@ -18,14 +19,14 @@ function FootballHome({ leagues, fixtures, state, onShowOrHide, onStateChange })
             leagues[0] !== undefined
               ?
               leagues.map(c => (
-                <div key={c.countryId}>
+                <div key={createGuid()}>
                   <div className={`country${c.visible === 'none' ? '' : ' spread'}`} onClick={() => onShowOrHide(c)}>
                     <img src={c.countryLogo} alt="" />
                     <span>{c.country}</span>
                   </div>
                   <div className={`country-leagues ${c.visible === 'none' ? ' hidden' : ''}`}>
                     {c.leagues.map(l => (
-                      <div key={l.leagueId} className="league">
+                      <div key={createGuid()} className="league">
                         <Link to={`/football/leagues/details/${l.leagueId}`}>
                           {l.name}
                         </Link>
@@ -33,7 +34,10 @@ function FootballHome({ leagues, fixtures, state, onShowOrHide, onStateChange })
                     ))}
                   </div>
                 </div>))
-              : <div className='loading'><BsThreeDots /></div>
+              :
+              <div className='loading-background'>
+                <div className='loading'></div>
+              </div>
           }
         </div>
       </div>
@@ -56,19 +60,22 @@ function FootballHome({ leagues, fixtures, state, onShowOrHide, onStateChange })
         <div className="body-of-matches">
           {
             fixtures[0] === undefined
-              ? <div className='loading'><BsThreeDots /></div>
+              ?
+              <div className='loading-background'>
+                <div className='loading'></div>
+              </div>
               :
               <table>
                 {
                   fixtures.map(f => (
-                    <tbody key={f.id}>
+                    <tbody key={createGuid()}>
                       <tr className='league-in-fixtures'>
                         <td><img src={f.image} alt="" /></td>
                         <td colSpan="4"><Link to={`/football/leagues/details/${f.id}`}>{f.league}</Link></td>
                       </tr>
                       {
                         f.matches.map(m => (
-                          <tr key={m.matchId} className='league-match'>
+                          <tr key={createGuid()} className='league-match'>
                             <td>
                               <div>{m.startTime}</div>
                               <div className={

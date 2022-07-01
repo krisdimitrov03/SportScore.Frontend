@@ -2,19 +2,6 @@
     text-align: center;
 }
 
-.loading {
-    text-align: center;
-    padding: 1rem 8rem;
-    color: #162C7A;
-    background-color: white;
-    font-size: 5rem;
-    border-radius: 0 0 0.5rem 0.5rem;
-}
-
-.loading svg {
-    vertical-align: middle;
-}
-
 .leagues,
 .matches {
     vertical-align: top;
