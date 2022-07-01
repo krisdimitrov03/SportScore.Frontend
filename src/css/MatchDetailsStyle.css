@@ -1,11 +1,8 @@
-.main {
-    padding-top: 2rem;
-}
-
 .match-details {
     background-color: #F1F1F1;
     display: inline-block;
     border-radius: 1rem;
+    margin: 0 2rem;
 }
 
 .header-match-details {

@@ -1,5 +1,9 @@
+@import url(./MatchDetailsStyle.css);
+@import url(./LeagueDetailsStyle.css);
+
 .main {
     text-align: center;
+    padding-top: 2rem;
 }
 
 .leagues,

@@ -9,8 +9,7 @@ export const loadLeaguesByCountry = async (setLeagues) => {
 }
 
 export const getLeagueDetails = async (id) => {
-    const data = await fetchLeagues(`leagueDetails/${id}`);
-    return data.data;
+    return await fetchLeagues(`leagueDetails/${id}`);
 }
 
 // Help Functions

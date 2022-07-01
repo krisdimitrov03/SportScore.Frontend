@@ -1,19 +1,17 @@
 import './App.css';
 import { useEffect, useState, useMemo } from 'react';
-import { Navigate, Routes, Route, BrowserRouter as Router, useParams } from 'react-router-dom'
+import { Navigate, Routes, Route, BrowserRouter as Router } from 'react-router-dom'
 import authService from './Services/authService'
 import { getCookie } from './Services/cookieService';
 import { UserContext } from './UserContext'
 
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-import FootballHome from './Components/FootballHome';
+import FootballMain from './Components/Football/FootballMain';
 import CommingSoon from './Components/CommingSoon';
 import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 import Logout from './Components/Auth/Logout';
-import MatchDetails from './Components/MatchDetails';
-import LeagueDetails from './Components/LeagueDetails';
 
 import { loadLeaguesByCountry, getLeagueDetails } from './Services/leagueService'
 import { loadLivescoreByLeague, loadFixturesByLeague, getMatchDetails } from './Services/fixtureService'
@@ -79,13 +77,15 @@ function App() {
           <Routes>
             <Route path='/' element={<Navigate to="/football" />}></Route>
 
-            <Route path='/football' element={
-              <FootballHome
+            <Route path='/football/*' element={
+              <FootballMain
                 leagues={leagues}
                 fixtures={fixtures}
                 state={fixturesState}
                 onShowOrHide={onShowOrHideLeagues}
-                onStateChange={onFixturesStateChange} />}>
+                onStateChange={onFixturesStateChange}
+                getMatchDetails={getMatchDetails}
+                getLeagueDetails={getLeagueDetails} />}>
             </Route>
 
             <Route path='/basketball' element={<CommingSoon />}>
@@ -97,12 +97,6 @@ function App() {
             <Route path='/register' element={<Register />}>
             </Route>
             <Route path='/logout' element={<Logout logUserOut={authService.logUserOut} />}>
-            </Route>
-            <Route path='/football/matches/details/:id' element={
-              <MatchDetails getMatch={async (id) => await getMatchDetails(id)} />}>
-            </Route>
-            <Route path='/football/leagues/details/:id' element={
-              <LeagueDetails getLeague={async (id) => await getLeagueDetails(id)} />}>
             </Route>
           </Routes>
 
