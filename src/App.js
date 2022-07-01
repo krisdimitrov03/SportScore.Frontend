@@ -13,8 +13,9 @@ import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 import Logout from './Components/Auth/Logout';
 import MatchDetails from './Components/MatchDetails';
+import LeagueDetails from './Components/LeagueDetails';
 
-import { loadLeaguesByCountry } from './Services/leagueService'
+import { loadLeaguesByCountry, getLeagueDetails } from './Services/leagueService'
 import { loadLivescoreByLeague, loadFixturesByLeague, getMatchDetails } from './Services/fixtureService'
 
 
@@ -87,12 +88,22 @@ function App() {
                 onStateChange={onFixturesStateChange} />}>
             </Route>
 
-            <Route path='/basketball' element={<CommingSoon />}></Route>
-            <Route path='/cricket' element={<CommingSoon />}></Route>
-            <Route path='/login' element={<Login logUserIn={authService.logUserIn} />}></Route>
-            <Route path='/register' element={<Register />}></Route>
-            <Route path='/logout' element={<Logout logUserOut={authService.logUserOut} />}></Route>
-            <Route path='/football/matches/details/:id' element={<MatchDetails getMatch={async (id) => await getMatchDetails(id)} />}></Route>
+            <Route path='/basketball' element={<CommingSoon />}>
+            </Route>
+            <Route path='/cricket' element={<CommingSoon />}>
+            </Route>
+            <Route path='/login' element={<Login logUserIn={authService.logUserIn} />}>
+            </Route>
+            <Route path='/register' element={<Register />}>
+            </Route>
+            <Route path='/logout' element={<Logout logUserOut={authService.logUserOut} />}>
+            </Route>
+            <Route path='/football/matches/details/:id' element={
+              <MatchDetails getMatch={async (id) => await getMatchDetails(id)} />}>
+            </Route>
+            <Route path='/football/leagues/details/:id' element={
+              <LeagueDetails getLeague={async (id) => await getLeagueDetails(id)} />}>
+            </Route>
           </Routes>
 
           <Footer />

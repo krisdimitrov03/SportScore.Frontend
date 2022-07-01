@@ -1,16 +1,21 @@
 import { footballUrl } from '../Constants.js'
 
 export const loadLeaguesByCountry = async (setLeagues) => {
-    const data = await fetchLeagues();
+    const data = await fetchLeagues('leagues');
 
     const leagues = data.map(e => e = { ...e, visible: 'none' })
 
     setLeagues(leagues);
 }
 
+export const getLeagueDetails = async (id) => {
+    const data = await fetchLeagues(`leagueDetails/${id}`);
+    return data.data;
+}
+
 // Help Functions
 
-const fetchLeagues = async () => {
+const fetchLeagues = async (url) => {
     const options = {
         method: 'GET',
         headers: {
@@ -18,7 +23,7 @@ const fetchLeagues = async () => {
         }
     };
 
-    const res = await fetch(`${footballUrl}/leagues`, options);
+    const res = await fetch(`${footballUrl}/${url}`, options);
     const data = await res.json();
 
     return data.data;
