@@ -1,0 +1,167 @@
+.league-details {
+    display: inline-block;
+    background-color: white;
+    text-align: left;
+    border-radius: 1rem;
+}
+
+.league-main {
+    background-color: #F1F1F1;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.league-main,
+.league-statistics {
+    padding: 2rem;
+}
+
+.league-logo {
+    height: 10rem;
+    width: 10rem;
+    object-fit: contain;
+    margin-right: 1.5rem;
+}
+
+.league-logo,
+.main-data {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.main-data .league-name {
+    color: #162C7A;
+    font-size: 200%;
+    font-weight: 600;
+    margin: 0;
+}
+
+.season {
+    margin: 1rem 0 0 0;
+    color: rgb(96, 96, 96);
+}
+
+.country-data img,
+.country-data p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.country-data img {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: 2px solid #162C7A;
+    object-fit: cover;
+    margin-right: 0.5rem;
+}
+
+.country-data p {
+    font-size: 120%;
+    font-weight: 500;
+    color: rgb(96, 96, 96);
+}
+
+.standings {
+    text-align: center;
+}
+
+.standings h3 {
+    margin-top: 0;
+}
+
+.topscorers h3 {
+    margin-top: 2rem;
+}
+
+.st {
+    border-collapse: collapse;
+}
+
+.st th,
+.st td {
+    padding: 1rem;
+}
+
+.st tbody tr {
+    background-color: white;
+    border-bottom: 1px solid #C8C8C8;
+    font-weight: 500;
+}
+
+.st thead {
+    background-color: #162C7A;
+    color: white;
+}
+
+.st tbody td span {
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.w {
+    background-color: green;
+}
+
+.d {
+    background-color: rgb(98, 98, 98);
+}
+
+.l {
+    background-color: rgb(185, 13, 13);
+}
+
+.pts {
+    background-color: #44afed;
+}
+
+.t-i-s {
+    width: 13rem;
+    text-align: left;
+}
+
+.topscorers {
+    text-align: center;
+}
+
+.tsc {
+    border-collapse: collapse;
+    display: inline-block;
+}
+
+.tsc th,
+.tsc td {
+    padding: 1rem 2rem;
+}
+
+.tsc td p,
+.tsc td span {
+    margin: 0;
+}
+
+.tsc td span {
+    font-size: 80%;
+}
+
+.tsc tbody tr {
+    border-bottom: 1px solid #C8C8C8;
+}
+
+.tsc thead tr {
+    background-color: #162C7A;
+    color: white;
+}
+
+.tsc tbody .player-info,
+.tsc thead .player-info {
+    text-align: left!important;
+}
+
+.tsc tbody .player-info {
+    padding-left: 0;
+}
+
+.tsc tbody td img {
+    height: 3rem;
+    border-radius: 50%;
+}
