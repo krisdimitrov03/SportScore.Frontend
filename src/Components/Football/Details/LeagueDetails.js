@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Loader from '../../Loader';
 import NotAvailable from './NotAvailable'
@@ -12,12 +11,14 @@ function LeagueDetails({ getLeague }) {
     const params = useParams();
     const id = params.id;
 
-    async function loadLeague() {
-        const leagueFromServer = await getLeague(id);
-        setleague(leagueFromServer);
-    }
 
-    loadLeague();
+    useEffect(() => {
+        async function loadLeague(id) {
+            const leagueFromServer = await getLeague(id);
+            setleague(leagueFromServer);
+        }
+        loadLeague(id);
+    });
 
     return (
         league === null
@@ -40,8 +41,8 @@ function LeagueDetails({ getLeague }) {
                         <h3>Standings</h3>
                         {
                             league.standings === null ||
-                            league.standings === undefined ||
-                            league.standings.length === 0 
+                                league.standings === undefined ||
+                                league.standings.length === 0
                                 ? <NotAvailable text={'standings'} />
                                 : <StandingsTable standings={league.standings} />
                         }
@@ -50,8 +51,8 @@ function LeagueDetails({ getLeague }) {
                         <h3>Top Players</h3>
                         {
                             league.topscorers === null ||
-                            league.topscorers === undefined ||
-                            league.topscorers.length === 0 
+                                league.topscorers === undefined ||
+                                league.topscorers.length === 0
                                 ? <NotAvailable text={'top players'} />
                                 : <TopScorersTable players={league.topscorers} />
                         }

@@ -1,12 +1,15 @@
 import React from 'react'
-import { useContext } from 'react'
-import { UserContext } from '../../UserContext'
-import { BsBell, BsBellFill } from 'react-icons/bs'
+// import { useContext } from 'react'
+// import { UserContext } from '../../UserContext'
+import {
+    BsBell,
+    // BsBellFill
+} from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import { validateColor, validateTimeLabel } from '../../DesignValidator'
 
 function Match({ match }) {
-    const { user } = useContext(UserContext);
+    // const { user } = useContext(UserContext);
 
     return (
         <tr className='league-match'>
@@ -30,11 +33,11 @@ function Match({ match }) {
             <td>
                 <div>
                     {
-                        user === null
-                            ? <Link to="/login"><BsBell /></Link>
-                            : user.favorites.includes(match.matchId)
-                                ? <BsBellFill />
-                                : <BsBell />
+                        // user === null ? 
+                        <Link to="/comming-soon"><BsBell /></Link>
+                        // : user.favorites.includes(match.matchId)
+                        //     ? <BsBellFill />
+                        //     : <BsBell />
                     }
                 </div>
             </td>

@@ -6,7 +6,8 @@ import { UserContext } from '../../UserContext'
 function Login({ logUserIn }) {
   const { user, setUser } = useContext(UserContext);
 
-  const onLogin = () => {
+  const onLogin = (e) => {
+    e.preventDefault();
     logUserIn('petar-oborev@gmail.com', 'Petyo@29', setUser);
   }
 
@@ -15,8 +16,10 @@ function Login({ logUserIn }) {
   }
 
   return (
-    <div>
-      <button onClick={onLogin}>Log in</button>
+    <div className="login-form">
+      <form action="">
+        <input type="submit" onClick={onLogin} value="Log in" />
+      </form>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import Loader from '../../Loader'
 import { useParams, Link } from 'react-router-dom'
 import DTandMiniEvents from './DTandMiniEvents'
 import Statistics from './Statistics'
+import { validateColor, validateTimeLabel } from '../../../DesignValidator'
 
 function MatchDetails({ getMatch }) {
     const [match, setMatch] = useState(null);
@@ -32,7 +33,7 @@ function MatchDetails({ getMatch }) {
                     </div>
                     <div className="state">
                         <p className='result'>{match.result}</p>
-                        <p>{match.time}'</p>
+                        <p className={`${validateColor(match.time)}`}>{validateTimeLabel(match.time)}</p>
                     </div>
                     <div className="team">
                         <img src={match.awayTeamLogo} alt="" />

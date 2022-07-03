@@ -1,10 +1,46 @@
 import { Route, Routes } from 'react-router-dom'
-import LeagueDetails from './Details/LeagueDetails'
+import { useState, useEffect } from 'react'
 import MatchDetails from './Details/MatchDetails'
+import LeagueDetails from './Details/LeagueDetails'
 import Leagues from './Leagues'
 import Matches from './Matches'
+import { loadLeaguesByCountry, getLeagueDetails } from '../../Services/leagueService'
+import { loadLivescoreByLeague, loadFixturesByLeague, getMatchDetails } from '../../Services/fixtureService'
 
-function FootballMain({ leagues, fixtures, state, onShowOrHide, onStateChange, getMatchDetails, getLeagueDetails }) {
+function FootballMain() {
+  const [state, setFixturesState] = useState("live");
+  const [fixtures, setFixtures] = useState([]);
+  const [leagues, setLeagues] = useState([]);
+
+  useEffect(() => {
+    loadLeaguesByCountry(setLeagues);
+    loadLivescoreByLeague(setFixtures);
+    setFixturesState('live');
+  }, []);
+
+  const onShowOrHide = (country) => {
+    setLeagues(leagues.map(e => {
+      if (e.countryId === country.countryId) {
+        e = e.visible === 'none'
+          ? { ...e, visible: 'yes' }
+          : { ...e, visible: 'none' }
+      }
+
+      return e;
+    }));
+  }
+
+  const onStateChange = (state) => {
+    setFixtures([]);
+    if (state === 'all') {
+      setFixturesState('live');
+      loadLivescoreByLeague(setFixtures, setFixturesState);
+    } else {
+      setFixturesState('all');
+      loadFixturesByLeague(setFixtures, setFixturesState);
+    }
+  }
+
   return (
     <div className="main">
       <Leagues leagues={leagues} onShowOrHide={onShowOrHide} />

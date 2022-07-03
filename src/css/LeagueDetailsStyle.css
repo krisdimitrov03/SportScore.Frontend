@@ -99,6 +99,15 @@
     color: white;
 }
 
+.st tbody td a {
+    text-decoration: none;
+    color: black;
+}
+
+.st tbody td a:hover {
+    text-decoration: underline;
+}
+
 .w {
     background-color: green;
 }

@@ -1,5 +1,6 @@
 @import url(./MatchDetailsStyle.css);
 @import url(./LeagueDetailsStyle.css);
+@import url(./TeamDetailsStyle.css);
 
 .main {
     text-align: center;

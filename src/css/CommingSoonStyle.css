@@ -1,0 +1,38 @@
+.comming-soon {
+    background-color: white;
+    display: inline-block;
+    padding: 3rem;
+    width: 30rem;
+    border-radius: 1rem;
+    color: #162C7A;
+}
+
+.comming-soon p {
+    color: grey;
+}
+
+.comming-soon svg {
+    font-size: 800%;
+}
+
+.comming-soon svg path {
+    stroke: #162C7A;
+}
+
+.comming-soon a {
+    display: inline-block;
+    color: white;
+    background-color: #162C7A;
+    padding: 1rem;
+    margin-top: 2rem;
+    text-decoration: none;
+    font-size: 100%;
+    border-radius: 0.2rem;
+    border: 1px solid #162C7A;
+    transition: 100ms;
+}
+
+.comming-soon a:hover {
+    color: #162C7A;
+    background-color: white;
+}
